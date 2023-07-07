@@ -9,7 +9,8 @@ import { stringifyNumber } from './common/stringifyNumber';
 import { MinimalCoordinates } from '../components/MinimalCoordinates';
 
 function convertDateForListDisplay(rawValue: string): string {
-    const momentDate = moment(rawValue);
+    const convertedDate = new Date(rawValue).toLocaleString('en',{ calendar: 'ethiopic'});
+    const momentDate = moment(convertedDate);
     return convertMomentToDateFormatString(momentDate);
 }
 
