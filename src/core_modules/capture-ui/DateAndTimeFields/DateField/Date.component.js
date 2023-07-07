@@ -97,7 +97,8 @@ export class DateField extends React.Component<Props, State> {
     }
 
     handleDateSelected(value: string) {
-        this.props.onBlur(value);
+        const newValue = value?new Date(value).toLocaleDateString('sv',{ calendar: 'ethiopic'})?.replace(/ERA\d+\s*/g, '')?.trim():value;
+        this.props.onBlur(newValue);
         this.hidePopover();
         this.props.onDateSelectedFromCalendar && this.props.onDateSelectedFromCalendar();
         document.removeEventListener('click', this.handleDocumentClick);

@@ -20,10 +20,11 @@ class DateInputPlain extends React.Component<Props> {
     render() {
         // $FlowFixMe[prop-missing] automated comment
         const { onBlur, onChange, value, ...passOnProps } = this.props;
+        const newValue = value?new Date(value).toLocaleDateString('sv',{ calendar: 'ethiopic'})?.replace(/ERA\d+\s*/g, '')?.trim():value;
         return (
             // $FlowFixMe[cannot-spread-inexact] automated comment
             <TextInput
-                value={value || ''}
+                value={newValue || ''}
                 onBlur={this.handleBlur}
                 onChange={this.handleChange}
                 {...passOnProps}

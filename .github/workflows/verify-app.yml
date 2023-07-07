@@ -3,6 +3,7 @@ name: 'dhis2: verify app'
 on:
   push:
     branches:
+     - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
