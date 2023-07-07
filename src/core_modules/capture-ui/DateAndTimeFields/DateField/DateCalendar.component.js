@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { Calendar } from '@dhis2-ui/calendar';
-//import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
+// import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
 import '@joakim_sm/react-infinite-calendar/styles.css';
 import './customStyles.css';
 
@@ -94,13 +94,11 @@ export class DateCalendar extends Component<Props> {
                         autoFocus={false}
                         displayOptions={this.displayOptions}
                         {...passOnProps}
-                    /> 
-                    */ 
-                }
+                    /> */ }
                 <Calendar
                     {...this.getMinMaxProps()}
                     calendar={'ethiopic'}
-                    date ={this.getValue((value))}
+                    date={this.getValue((value))}
                     onDateSelect={this.handleChange}
                     width={currentWidth}
                     height={height}

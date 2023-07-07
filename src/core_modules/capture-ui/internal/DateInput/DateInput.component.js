@@ -14,14 +14,14 @@ class DateInputPlain extends React.Component<Props> {
     }
 
     handleChange = (event) => {
-        console.log("event:",event)
+        console.log('event:', event);
         this.props.onChange && this.props.onChange(event.currentTarget.value);
     }
 
     render() {
         // $FlowFixMe[prop-missing] automated comment
         const { onBlur, onChange, value, ...passOnProps } = this.props;
-        console.log("value:",value);
+        console.log('value:', value);
         const newValue = value ? new Date(value).toLocaleDateString('sv', { calendar: 'ethiopic' })?.replace(/ERA\d+\s*/g, '')?.trim() : value;
         return (
             // $FlowFixMe[cannot-spread-inexact] automated comment
