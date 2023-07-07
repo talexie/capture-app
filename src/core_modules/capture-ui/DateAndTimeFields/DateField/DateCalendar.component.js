@@ -97,6 +97,7 @@ export class DateCalendar extends Component<Props> {
                     /> */ }
                 <Calendar
                     {...this.getMinMaxProps()}
+                    {...passOnProps}
                     calendar={'ethiopic'}
                     date={this.getValue((value))}
                     onDateSelect={this.handleChange}
@@ -106,7 +107,6 @@ export class DateCalendar extends Component<Props> {
                     displayOptions={this.displayOptions}
                     weekDayFormat={'short'}
                     numberingSystem={'geor'}
-                    {...passOnProps}
                 />
             </div>
         );
