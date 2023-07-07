@@ -2,10 +2,11 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import moment from 'moment';
-import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
+import { Calendar } from '@dhis2-ui/calendar';
+//import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
 import '@joakim_sm/react-infinite-calendar/styles.css';
 import './customStyles.css';
-import { Calendar } from '@dhis2-ui/calendar';
+
 
 type Props = {
     onDateSelected: (value: any) => void,
@@ -83,27 +84,30 @@ export class DateCalendar extends Component<Props> {
         return (
             <div>
                 { /* $FlowFixMe */}
-                {/*<InfiniteCalendar
-                    {...this.getMinMaxProps()}
-                    selected={this.getValue((value))}
-                    onSelect={this.handleChange}
-                    width={currentWidth}
-                    height={height}
-                    autoFocus={false}
-                    displayOptions={this.displayOptions}
-                    {...passOnProps}
-                />*/}
+                { /*
+                    <InfiniteCalendar
+                        {...this.getMinMaxProps()}
+                        selected={this.getValue((value))}
+                        onSelect={this.handleChange}
+                        width={currentWidth}
+                        height={height}
+                        autoFocus={false}
+                        displayOptions={this.displayOptions}
+                        {...passOnProps}
+                    /> 
+                    */ 
+                }
                 <Calendar
                     {...this.getMinMaxProps()}
-                    calendar= { 'ethiopic' }
+                    calendar={'ethiopic'}
                     date ={this.getValue((value))}
                     onDateSelect={this.handleChange}
                     width={currentWidth}
                     height={height}
                     autoFocus={false}
                     displayOptions={this.displayOptions}
-                    weekDayFormat ={ 'short' }
-                    numberingSystem = { 'geor' } 
+                    weekDayFormat={'short'}
+                    numberingSystem={'geor'} 
                     {...passOnProps}
                 />
             </div>
