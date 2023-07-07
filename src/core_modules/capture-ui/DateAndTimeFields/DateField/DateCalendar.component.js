@@ -105,7 +105,7 @@ export class DateCalendar extends Component<Props> {
                     autoFocus={false}
                     displayOptions={this.displayOptions}
                     weekDayFormat={'short'}
-                    numberingSystem={'geor'} 
+                    numberingSystem={'geor'}
                     {...passOnProps}
                 />
             </div>
