@@ -96,19 +96,15 @@ export class DateCalendar extends Component<Props> {
                         {...passOnProps}
                     /> */ }
                 <CalendarInput
-                    {...this.getMinMaxProps()}
-                    {...passOnProps}
                     calendar={'ethiopian'}
                     date={this.getValue((value))}
                     onDateSelect={this.handleChange}
-                    dir="ltr"
-                    locale="en-ET"
-                    timeZone="Africa/Khartoum"
-                    label=""
+                    dir={'ltr'}
+                    locale={'en-ET'}
+                    timeZone={'Africa/Khartoum'}
+                    label={''}
                     width={currentWidth}
                     height={height}
-                    autoFocus={false}
-                    displayOptions={this.displayOptions}
                     weekDayFormat={'short'}
                     numberingSystem={'geor'}
                 />

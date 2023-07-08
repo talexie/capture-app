@@ -22,11 +22,11 @@ class DateInputPlain extends React.Component<Props> {
         // $FlowFixMe[prop-missing] automated comment
         const { onBlur, onChange, value, ...passOnProps } = this.props;
         console.log('value:', value);
-        const newValue = value ? new Date(value).toLocaleDateString('sv', { calendar: 'ethiopic' })?.replace(/ERA\d+\s*/g, '')?.trim() : value;
+        // const newValue = value ? new Date(value).toLocaleDateString('sv', { calendar: 'ethiopic' })?.replace(/ERA\d+\s*/g, '')?.trim() : value;
         return (
             // $FlowFixMe[cannot-spread-inexact] automated comment
             <TextInput
-                value={newValue || ''}
+                value={value || ''}
                 onBlur={this.handleBlur}
                 onChange={this.handleChange}
                 {...passOnProps}

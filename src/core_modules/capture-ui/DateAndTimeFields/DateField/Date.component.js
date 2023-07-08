@@ -175,6 +175,13 @@ export class DateField extends React.Component<Props, State> {
                     width={calculatedInputWidth}
                     {...splittedPassOnProps.input}
                 />
+                <DateCalendar
+                    onDateSelected={this.handleDateSelected}
+                    value={this.props.value}
+                    currentWidth={calculatedCalendarWidth}
+                    height={calculatedCalendarHeight}
+                    {...splittedPassOnProps.calendar}
+                />
                 <div
                     data-test="date-calendar-wrapper"
                     ref={this.calendarWrapperDOMElementRef}
