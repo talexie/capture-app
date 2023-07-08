@@ -96,13 +96,12 @@ export class DateCalendar extends Component<Props> {
                         {...passOnProps}
                     /> */ }
                 <CalendarInput
-                    calendar={'ethiopian'}
+                    calendar={'ethiopic'}
                     date={this.getValue((value))}
                     onDateSelect={this.handleChange}
                     dir={'ltr'}
                     locale={'en-ET'}
                     timeZone={'Africa/Khartoum'}
-                    label={''}
                     width={currentWidth}
                     height={height}
                     weekDayFormat={'short'}
