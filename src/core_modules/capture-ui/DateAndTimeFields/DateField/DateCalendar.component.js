@@ -102,6 +102,7 @@ export class DateCalendar extends Component<Props> {
                     dir={'ltr'}
                     locale={'en-ET'}
                     timeZone={'Africa/Khartoum'}
+                    label={''}
                     width={currentWidth}
                     height={height}
                     weekDayFormat={'short'}
