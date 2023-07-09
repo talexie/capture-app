@@ -28,7 +28,7 @@ jobs:
       - name: Install
         run: yarn install --frozen-lockfile
       - name: Install D2 Scripts
-        run: yarn add -D -W d2-app-scripts
+        run: yarn add -D -W @dhis2/cli-app-scripts
 
   
   build:
