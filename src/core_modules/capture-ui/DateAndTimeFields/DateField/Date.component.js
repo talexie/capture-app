@@ -1,7 +1,8 @@
 // @flow
 import React, { createRef } from 'react';
-import { lowerCaseFirstLetter } from '../../internal/utils/string/lowerCaseFirstLetter';
 import { CalendarInput } from '@dhis2-ui/calendar';
+import { lowerCaseFirstLetter } from '../../internal/utils/string/lowerCaseFirstLetter';
+
 
 type Props = {
     value: ?string,
