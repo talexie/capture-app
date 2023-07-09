@@ -1,6 +1,7 @@
 // @flow
 import React, { createRef } from 'react';
 import { lowerCaseFirstLetter } from '../../internal/utils/string/lowerCaseFirstLetter';
+import { CalendarInput } from '@dhis2-ui/calendar';
 
 type Props = {
     value: ?string,
@@ -150,9 +151,9 @@ export class DateField extends React.Component<Props, State> {
             onDateSelectedFromCalendar,
             ...passOnProps
         } = this.props;
-        const { popoverOpen } = this.state;
+        // const { popoverOpen } = this.state;
         const calculatedInputWidth = inputWidth || width;
-        const calculatedCalendarWidth = calendarWidth || width;
+        // const calculatedCalendarWidth = calendarWidth || width;
         const splittedPassOnProps = DateField.splitPassOnProps(passOnProps);
         const calculatedCalendarHeight = calendarHeight || 350;
 
@@ -163,7 +164,6 @@ export class DateField extends React.Component<Props, State> {
                     width,
                     maxWidth,
                 }}
-                
             >
                 { /* // $FlowFixMe */}
                 {/* $FlowFixMe[prop-missing] automated comment */}
@@ -176,7 +176,7 @@ export class DateField extends React.Component<Props, State> {
                     timeZone={'Africa/Khartoum'}
                     label={''}
                     width={calculatedInputWidth}
-                    height={height}
+                    height={calculatedCalendarHeight}
                     weekDayFormat={'short'}
                     numberingSystem={'geor'}
                     onFocus={this.handleTextFieldFocus}
