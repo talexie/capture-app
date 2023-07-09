@@ -6,7 +6,6 @@ import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
 import '@joakim_sm/react-infinite-calendar/styles.css';
 import './customStyles.css';
 
-
 type Props = {
     onDateSelected: (value: any) => void,
     value?: ?string,
@@ -92,7 +91,7 @@ export class DateCalendar extends Component<Props> {
                     autoFocus={false}
                     displayOptions={this.displayOptions}
                     {...passOnProps}
-                /> 
+                />
             </div>
         );
     }
