@@ -27,10 +27,10 @@ jobs:
         with:
           node-version: 16.x
       - name: Install
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Install D2 Scripts
-        run: yarn add -D -W --no-verify @dhis2/cli-app-scripts @dhis2/app-runtime @dhis2/d2-i18n
+        run: yarn add -D -W @dhis2/cli-app-scripts@^9.0.1 @dhis2/app-runtime@3.8.0 @dhis2/d2-i18n@1.1.0
 
       - name: Build
         run: yarn build
