@@ -1,9 +1,6 @@
 // @flow
 import React, { createRef } from 'react';
-import { DatePopup } from './DatePopup.component';
-import { DateCalendar } from './DateCalendar.component';
 import { lowerCaseFirstLetter } from '../../internal/utils/string/lowerCaseFirstLetter';
-import { DateInput } from '../../internal/DateInput/DateInput.component';
 
 type Props = {
     value: ?string,
@@ -166,48 +163,26 @@ export class DateField extends React.Component<Props, State> {
                     width,
                     maxWidth,
                 }}
+                
             >
                 { /* // $FlowFixMe */}
                 {/* $FlowFixMe[prop-missing] automated comment */}
-                <DateInput
+                <CalendarInput
+                    calendar={'ethiopic'}
+                    date={this.props.value}
+                    onDateSelect={this.handleDateSelected}
+                    dir={'ltr'}
+                    locale={'en-ET'}
+                    timeZone={'Africa/Khartoum'}
+                    label={''}
+                    width={calculatedInputWidth}
+                    height={height}
+                    weekDayFormat={'short'}
+                    numberingSystem={'geor'}
                     onFocus={this.handleTextFieldFocus}
                     onBlur={this.handleTextFieldBlur}
-                    width={calculatedInputWidth}
                     {...splittedPassOnProps.input}
                 />
-                <DateCalendar
-                    onDateSelected={this.handleDateSelected}
-                    value={this.props.value}
-                    currentWidth={calculatedCalendarWidth}
-                    height={calculatedCalendarHeight}
-                    {...splittedPassOnProps.calendar}
-                />
-                <div
-                    data-test="date-calendar-wrapper"
-                    ref={this.calendarWrapperDOMElementRef}
-                >
-                    { /* // $FlowFixMe */}
-                    {/* $FlowFixMe[prop-missing] automated comment */}
-                    <DatePopup
-                        open={popoverOpen}
-                        onClose={this.hidePopover}
-                        width={calculatedCalendarWidth}
-                        height={calculatedCalendarHeight}
-                        inputWidth={calculatedInputWidth}
-                        inputUsesFloatingLabel={!!splittedPassOnProps.input.label}
-                        {...splittedPassOnProps.popup}
-                    >
-                        { /* // $FlowFixMe */}
-                        {/* $FlowFixMe[prop-missing] automated comment */}
-                        <DateCalendar
-                            onDateSelected={this.handleDateSelected}
-                            value={this.props.value}
-                            currentWidth={calculatedCalendarWidth}
-                            height={calculatedCalendarHeight}
-                            {...splittedPassOnProps.calendar}
-                        />
-                    </DatePopup>
-                </div>
             </div>
         );
     }

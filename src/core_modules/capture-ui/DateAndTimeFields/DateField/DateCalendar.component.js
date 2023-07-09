@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { CalendarInput } from '@dhis2-ui/calendar';
-// import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
+import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
 import '@joakim_sm/react-infinite-calendar/styles.css';
 import './customStyles.css';
 
@@ -82,9 +82,9 @@ export class DateCalendar extends Component<Props> {
         } = this.props;
 
         return (
-            <div>
-                { /* $FlowFixMe */}
-                { /*
+            <>
+                <div>
+                    { /* $FlowFixMe */}
                     <InfiniteCalendar
                         {...this.getMinMaxProps()}
                         selected={this.getValue((value))}
@@ -94,21 +94,24 @@ export class DateCalendar extends Component<Props> {
                         autoFocus={false}
                         displayOptions={this.displayOptions}
                         {...passOnProps}
-                    /> */ }
-                <CalendarInput
-                    calendar={'ethiopic'}
-                    date={this.getValue((value))}
-                    onDateSelect={this.handleChange}
-                    dir={'ltr'}
-                    locale={'en-ET'}
-                    timeZone={'Africa/Khartoum'}
-                    label={''}
-                    width={currentWidth}
-                    height={height}
-                    weekDayFormat={'short'}
-                    numberingSystem={'geor'}
-                />
-            </div>
+                    /> 
+                </div>
+                <div>
+                    <CalendarInput
+                        calendar={'ethiopic'}
+                        date={this.getValue((value))}
+                        onDateSelect={this.handleChange}
+                        dir={'ltr'}
+                        locale={'en-ET'}
+                        timeZone={'Africa/Khartoum'}
+                        label={''}
+                        width={currentWidth}
+                        height={height}
+                        weekDayFormat={'short'}
+                        numberingSystem={'geor'}
+                    />
+                </div>
+            </>
         );
     }
 }
