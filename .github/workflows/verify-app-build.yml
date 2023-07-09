@@ -26,8 +26,11 @@ jobs:
         with:
           node-version: 14.x
       - name: Install
-        run: yarn install 
-        
+        run: yarn install --frozen-lockfile
+      - name: Install D2 Scripts
+        run: yarn add -D -W d2-app-scripts
+
+  
   build:
     runs-on: ubuntu-latest
     needs: []
