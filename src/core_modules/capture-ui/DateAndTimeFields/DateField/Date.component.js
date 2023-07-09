@@ -1,6 +1,6 @@
 // @flow
 import React, { createRef } from 'react';
-import { CalendarInput } from '@dhis2-ui/calendar';
+import { CalendarInput } from '@dhis2/ui';
 import { lowerCaseFirstLetter } from '../../internal/utils/string/lowerCaseFirstLetter';
 
 
