@@ -25,16 +25,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-
-      - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-
       - name: Install
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
+        #run: yarn install
 
   
   build:
@@ -46,12 +39,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-
-      - uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Build
         run: yarn build
