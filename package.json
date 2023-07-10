@@ -86,7 +86,7 @@
         "postinstall": "husky install && node scripts/createSymlinkToInternalPackages.mjs",
         "i18n:add": "d2-app-scripts i18n extract && git add ./i18n/",
         "clean": "./scripts/clean.sh && yarn workspaces run clean",
-        "build:local": "GENERATE_SOURCEMAP=false d2-app-scripts build"
+        "build:local": "yarn workspaces run build && NODE_ENV=development GENERATE_SOURCEMAP=true d2-app-scripts build"
     },
     "devDependencies": {
         "@actions/core": "^1.9.1",
