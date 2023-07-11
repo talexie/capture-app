@@ -8,14 +8,14 @@
         }
     },
     "extends": [
-        #"airbnb",
-        #"plugin:flowtype/recommended",
+        "airbnb",
+        "plugin:flowtype/recommended",
         "plugin:react-hooks/recommended",
-	"plugin:react-app/recommended",
+	#"plugin:react-app/recommended",
         "react-app"
     ],
     "plugins": [
-	#"flowtype"
+	"flowtype"
     ],
     "env": {
         "browser": true,
@@ -36,7 +36,8 @@
         "Cypress": true
     },
     "rules": {
-        "react-app/react/react-in-jsx-scope": ["warn"],
+        #"react-app/react/react-in-jsx-scope": ["warn"],
+	#"react-hooks/rules-of-hooks": "warn",
         "indent": [2, 4],
         "max-len": [
             1,
